@@ -54,9 +54,7 @@ def CheckAndSendBirthdays(data_file):
     print(f"-> Found {len(matching_birthdays)} birthday(s) today. Connecting to Gmail...")
     
     try:
-        # Updated to your requested line
         with smtplib.SMTP("smtp.gmail.com") as connection:
-            # Explicitly connecting to secure port 587 right after initialization
             connection.connect("smtp.gmail.com", 587)
             connection.starttls()
             connection.login(user=MY_EMAIL, password=MY_PASSWORD)
@@ -69,7 +67,7 @@ def CheckAndSendBirthdays(data_file):
                 
                 letter_num = random.randint(1, 3)
                 try:
-                    with open(f"letter_templates/letter_{letter_num}.txt") as letter_file:
+                    with open(f"letter_{letter_num}.txt") as letter_file:
                         contents = letter_file.read()
                     contents = contents.replace("[NAME]", person_name)
                     
