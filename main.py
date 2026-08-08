@@ -78,7 +78,7 @@ def CheckAndSendBirthdays(data_file):
                     )
                     print(f"Birthday email sent to {person_name}!")
                 except FileNotFoundError:
-                    print(f"Error: letter_templates/letter_{letter_num}.txt missing.")
+                    print(f"Error: letter_{letter_num}.txt missing.")
                     
     except Exception as e:
         print(f"An error occurred: {e}")
